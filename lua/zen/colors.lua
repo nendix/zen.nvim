@@ -32,21 +32,21 @@
 
 local palette = {
 	-- Background colors
-	bg0 = "#030303", -- Deepest background
-	bg1 = "#131313", -- Slightly lighter for UI elements
-	bg2 = "#292929", -- Cursor line, folded
-	bg3 = "#424242", -- Visual selection, active elements
-	bg4 = "#5b5b5b", -- Lighter UI elements
+	bg0 = "#0a0a0a", -- Deepest background
+	bg1 = "#1d1d1d", -- Slightly lighter for UI elements
+	bg2 = "#323232", -- Cursor line, folded
+	bg3 = "#484848", -- Visual selection, active elements
+	bg4 = "#5f5f5f", -- Lighter UI elements
 
 	-- Foreground colors
-	fg = "#ececec", -- Main text
-	fg_dim = "#767676", -- Dimmed text, comments
-	fg_muted = "#424242", -- Very muted, line numbers inactive
+	fg = "#e3e3e3", -- Main text
+	fg_dim = "#787878", -- Dimmed text, comments
+	fg_muted = "#484848", -- Very muted, line numbers inactive
 
 	-- Syntax colors
-	silver = "#cdcdcd", -- Keywords, statements
-	stone = "#afafaf", -- Functions
-	slate = "#929292", -- Operators, parameters, preproc
+	silver = "#c7c7c7", -- Keywords, statements
+	stone = "#acacac", -- Functions
+	slate = "#919191", -- Operators, parameters, preproc
 	ash = "#5b5b5b", -- Punctuation
 
 	sage = "#a0b9a0", -- Green - strings

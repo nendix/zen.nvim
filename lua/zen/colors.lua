@@ -7,14 +7,11 @@
 ---@field fg string
 ---@field fg_dim string
 ---@field fg_muted string
+---@field silver string
 ---@field stone string
+---@field slate string
 ---@field ash string
----@field sage string
 ---@field mist string
----@field dust string
----@field rose string
----@field pearl string
----@field wave string
 ---@field diag_error string
 ---@field diag_warn string
 ---@field diag_info string
@@ -41,19 +38,14 @@ local palette = {
     fg_dim = "#707078",   -- Dimmed text, comments
     fg_muted = "#505058", -- Very muted, line numbers inactive
 
-    -- Monochromatic grays for syntax
-    stone = "#8a8a92",    -- Operators, punctuation, neutral
+    -- Extended gray palette for syntax
+    silver = "#9a9aa2",   -- Slightly brighter than fg (constants, numbers)
+    stone = "#8a8a92",    -- Neutral gray (types)
+    slate = "#787880",    -- Between fg_dim and stone (operators, punct)
     ash = "#606068",      -- Subtle elements
 
-    -- Muted accent colors (used sparingly for essential distinctions)
-    sage = "#7a8a7a",     -- Strings - muted green
-    mist = "#7a8a9a",     -- Functions - muted blue
-    dust = "#9a8a7a",     -- Constants, numbers - muted warm
-    rose = "#9a7a7a",     -- Keywords - muted rose
-    pearl = "#8a8a9a",    -- Types - muted lavender
-
-    -- Subtle accent for special elements
-    wave = "#6a7a8a",     -- Special, hints
+    -- Single accent color (used very sparingly)
+    mist = "#7a8a9a",     -- For search highlights, special UI
 
     -- Diagnostics (muted but distinguishable)
     diag_error = "#8a5a5a",   -- Muted red

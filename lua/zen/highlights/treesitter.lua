@@ -10,55 +10,88 @@ function M.setup(colors, config)
         -- @variable: various variable names
         ["@variable"] = { fg = theme.ui.fg },
         -- @variable.builtin: built-in variable names (e.g. `this`, `self`)
-        ["@variable.builtin"] = { fg = theme.syn.special2, italic = true },
+        ["@variable.builtin"] = { fg = theme.ui.fg, italic = true },
         -- @variable.parameter: parameters of a function
         ["@variable.parameter"] = { fg = theme.syn.parameter },
         -- @variable.member: object and struct fields
         ["@variable.member"] = { fg = theme.syn.identifier },
 
+        -- @constant: constant identifiers
+        ["@constant"] = { fg = theme.syn.constant },
+        -- @constant.builtin: built-in constant values
+        ["@constant.builtin"] = { fg = theme.syn.constant, bold = true },
+
         -- @string.regexp: regular expressions
         ["@string.regexp"] = { fg = theme.syn.regex },
         -- @string.escape: escape sequences
-        ["@string.escape"] = { fg = theme.syn.regex },
+        ["@string.escape"] = { fg = theme.syn.regex, bold = true },
         -- @string.special.symbol: symbols or atoms
         ["@string.special.symbol"] = { fg = theme.syn.identifier },
         -- @string.special.url: URIs
-        ["@string.special.url"] = { fg = theme.syn.special1, underline = true },
+        ["@string.special.url"] = { fg = theme.ui.fg, underline = true },
 
         -- @attribute: attribute annotations
-        ["@attribute"] = { link = "Constant" },
+        ["@attribute"] = { fg = theme.syn.preproc, italic = true },
 
         -- @constructor: constructor calls and definitions
-        ["@constructor"] = { fg = theme.syn.special1 },
-        ["@constructor.lua"] = { fg = theme.syn.keyword },
+        ["@constructor"] = { fg = theme.syn.type },
+        ["@constructor.lua"] = { fg = theme.syn.punct },
 
         -- @operator: symbolic operators
         ["@operator"] = { link = "Operator" },
 
-        -- @keyword.operator: operators that are English words
-        ["@keyword.operator"] = { fg = theme.syn.operator },
-        -- @keyword.import: keywords for including modules
-        ["@keyword.import"] = { link = "PreProc" },
-        -- @keyword.return: keywords like `return` and `yield`
-        ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.keywordStyle or {}),
-        -- @keyword.exception: keywords related to exceptions
-        ["@keyword.exception"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.statementStyle or {}),
+        -- @function: function definitions
+        ["@function"] = { fg = theme.syn.fun, italic = true },
+        -- @function.builtin: built-in functions
+        ["@function.builtin"] = { fg = theme.syn.fun, italic = true },
+        -- @function.call: function calls
+        ["@function.call"] = { fg = theme.syn.fun, italic = true },
+        -- @function.method: method definitions
+        ["@function.method"] = { fg = theme.syn.fun, italic = true },
+        -- @function.method.call: method calls
+        ["@function.method.call"] = { fg = theme.syn.fun, italic = true },
 
-        ["@keyword.luap"] = { link = "@string.regex" },
+        -- @keyword: keywords
+        ["@keyword"] = { fg = theme.syn.keyword, bold = true },
+        -- @keyword.operator: operators that are English words
+        ["@keyword.operator"] = { fg = theme.syn.operator, bold = true },
+        -- @keyword.import: keywords for including modules
+        ["@keyword.import"] = { fg = theme.syn.preproc },
+        -- @keyword.return: keywords like `return` and `yield`
+        ["@keyword.return"] = { fg = theme.syn.keyword, bold = true },
+        -- @keyword.exception: keywords related to exceptions
+        ["@keyword.exception"] = { fg = theme.syn.keyword, bold = true },
+        -- @keyword.conditional: conditionals
+        ["@keyword.conditional"] = { fg = theme.syn.keyword, bold = true },
+        -- @keyword.repeat: loops
+        ["@keyword.repeat"] = { fg = theme.syn.keyword, bold = true },
+        -- @keyword.function: function keyword
+        ["@keyword.function"] = { fg = theme.syn.keyword, bold = true },
+
+        ["@keyword.luap"] = { link = "@string.regexp" },
+
+        -- @type: types
+        ["@type"] = { fg = theme.syn.type },
+        -- @type.builtin: built-in types
+        ["@type.builtin"] = { fg = theme.syn.type },
 
         -- @punctuation.delimiter: delimiters (e.g. `;`, `.`, `,`)
         ["@punctuation.delimiter"] = { fg = theme.syn.punct },
         -- @punctuation.bracket: brackets (e.g. `()`, `{}`, `[]`)
         ["@punctuation.bracket"] = { fg = theme.syn.punct },
         -- @punctuation.special: special symbols (e.g. `{}` in string interpolation)
-        ["@punctuation.special"] = { fg = theme.syn.special1 },
+        ["@punctuation.special"] = { fg = theme.syn.punct },
 
+        -- @comment: comments
+        ["@comment"] = { fg = theme.syn.comment, italic = true },
         -- @comment.error: error-type comments
-        ["@comment.error"] = { fg = theme.ui.fg, bg = theme.diag.error },
+        ["@comment.error"] = { fg = theme.ui.fg, bg = theme.diag.error, bold = true },
         -- @comment.warning: warning-type comments
-        ["@comment.warning"] = { fg = theme.ui.fg_reverse, bg = theme.diag.warning },
+        ["@comment.warning"] = { fg = theme.ui.fg, bg = theme.diag.warning, bold = true },
+        -- @comment.todo: todo-type comments
+        ["@comment.todo"] = { fg = theme.ui.fg, bg = theme.diag.info, bold = true },
         -- @comment.note: note-type comments
-        ["@comment.note"] = { fg = theme.ui.fg_reverse, bg = theme.diag.hint },
+        ["@comment.note"] = { fg = theme.ui.fg, bg = theme.diag.hint, bold = true },
 
         -- @markup.strong: bold text
         ["@markup.strong"] = { bold = true },
@@ -70,19 +103,19 @@ function M.setup(colors, config)
         ["@markup.underline"] = { underline = true },
 
         -- @markup.heading: headings, titles
-        ["@markup.heading"] = { link = "Function" },
+        ["@markup.heading"] = { fg = theme.ui.fg, bold = true },
 
         -- @markup.quote: block quotes
-        ["@markup.quote"] = { link = "@variable.parameter" },
+        ["@markup.quote"] = { fg = theme.syn.comment, italic = true },
         -- @markup.math: math environments
-        ["@markup.math"] = { link = "Constant" },
+        ["@markup.math"] = { fg = theme.syn.constant },
         -- @markup.environment: environments
-        ["@markup.environment"] = { link = "Keyword" },
+        ["@markup.environment"] = { fg = theme.syn.keyword, bold = true },
 
         -- @markup.link.url: URL-style links
         ["@markup.link.url"] = { link = "@string.special.url" },
         -- @markup.raw: literal or verbatim text
-        ["@markup.raw"] = { link = "String" },
+        ["@markup.raw"] = { fg = theme.syn.string },
 
         -- @diff.plus: added text (for diff files)
         ["@diff.plus"] = { fg = theme.vcs.added },
@@ -91,8 +124,10 @@ function M.setup(colors, config)
         -- @diff.delta: changed text (for diff files)
         ["@diff.delta"] = { fg = theme.vcs.changed },
 
+        -- @tag: XML-style tag names
+        ["@tag"] = { fg = theme.syn.keyword },
         -- @tag.attribute: XML-style tag attributes
-        ["@tag.attribute"] = { fg = theme.syn.identifier },
+        ["@tag.attribute"] = { fg = theme.syn.identifier, italic = true },
         -- @tag.delimiter: XML-style tag delimiters
         ["@tag.delimiter"] = { fg = theme.syn.punct },
     }

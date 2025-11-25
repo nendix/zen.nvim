@@ -129,25 +129,26 @@ function M.theme(palette)
             },
         },
         syn = {
-            string = palette.sage,
+            -- Grayscale syntax - minimal color, rely on bold/italic
+            string = palette.fg,           -- plain text
             variable = "NONE",
-            number = palette.dust,
-            constant = palette.dust,
-            identifier = palette.fg,
-            parameter = palette.fg_dim,
-            fun = palette.mist,
-            statement = palette.rose,
-            keyword = palette.rose,
-            operator = palette.stone,
-            preproc = palette.stone,
-            type = palette.pearl,
-            regex = palette.dust,
-            deprecated = palette.fg_muted,
-            punct = palette.stone,
-            comment = palette.fg_dim,
-            special1 = palette.wave,
-            special2 = palette.rose,
-            special3 = palette.mist,
+            number = palette.silver,       -- slightly brighter
+            constant = palette.silver,     -- slightly brighter
+            identifier = palette.fg,       -- plain text
+            parameter = palette.fg_dim,    -- dimmed
+            fun = palette.fg,              -- plain (styled with italic)
+            statement = palette.fg,        -- plain (styled with bold)
+            keyword = palette.fg,          -- plain (styled with bold)
+            operator = palette.slate,      -- subtle gray
+            preproc = palette.stone,       -- neutral gray
+            type = palette.stone,          -- neutral gray
+            regex = palette.stone,         -- neutral gray
+            deprecated = palette.fg_muted, -- very dim
+            punct = palette.slate,         -- subtle gray
+            comment = palette.fg_dim,      -- dimmed (styled with italic)
+            special1 = palette.stone,      -- neutral gray
+            special2 = palette.fg,         -- plain
+            special3 = palette.fg,         -- plain
         },
         diag = {
             error = palette.diag_error,
@@ -168,22 +169,22 @@ function M.theme(palette)
             changed = palette.vcs_changed,
         },
         term = {
-            palette.bg0,       -- black
+            palette.bg0,        -- black
             palette.diag_error, -- red
-            palette.sage,      -- green
-            palette.dust,      -- yellow
-            palette.mist,      -- blue
-            palette.rose,      -- magenta
-            palette.wave,      -- cyan
-            palette.fg_dim,    -- white
-            palette.stone,     -- bright black
+            palette.vcs_added,  -- green
+            palette.vcs_changed,-- yellow
+            palette.mist,       -- blue
+            palette.stone,      -- magenta
+            palette.slate,      -- cyan
+            palette.fg_dim,     -- white
+            palette.ash,        -- bright black
             palette.diag_error, -- bright red
-            palette.sage,      -- bright green
-            palette.dust,      -- bright yellow
-            palette.mist,      -- bright blue
-            palette.pearl,     -- bright magenta
-            palette.wave,      -- bright cyan
-            palette.fg,        -- bright white
+            palette.vcs_added,  -- bright green
+            palette.vcs_changed,-- bright yellow
+            palette.mist,       -- bright blue
+            palette.stone,      -- bright magenta
+            palette.slate,      -- bright cyan
+            palette.fg,         -- bright white
         },
     }
 end

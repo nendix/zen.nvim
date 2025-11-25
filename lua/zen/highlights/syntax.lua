@@ -7,8 +7,8 @@ function M.setup(colors, config)
     config = config or require("zen").config
 
     return {
-        -- Comment: any comment
-        Comment = vim.tbl_extend("force", { fg = theme.syn.comment }, config.commentStyle or {}),
+        -- Comment: any comment (dimmed + italic)
+        Comment = { fg = theme.syn.comment, italic = true },
 
         -- Constant: any constant
         Constant = { fg = theme.syn.constant },
@@ -18,30 +18,30 @@ function M.setup(colors, config)
         Character = { link = "String" },
         -- Number: a number constant
         Number = { fg = theme.syn.number },
-        -- Boolean: a boolean constant
-        Boolean = { fg = theme.syn.constant },
+        -- Boolean: a boolean constant (bold)
+        Boolean = { fg = theme.syn.constant, bold = true },
         -- Float: a floating point constant
         Float = { link = "Number" },
 
         -- Identifier: any variable name
         Identifier = { fg = theme.syn.identifier },
-        -- Function: function name
-        Function = vim.tbl_extend("force", { fg = theme.syn.fun }, config.functionStyle or {}),
+        -- Function: function name (italic)
+        Function = { fg = theme.syn.fun, italic = true },
 
-        -- Statement: any statement
-        Statement = vim.tbl_extend("force", { fg = theme.syn.statement }, config.statementStyle or {}),
+        -- Statement: any statement (bold)
+        Statement = { fg = theme.syn.statement, bold = true },
         -- Operator: "sizeof", "+", "*", etc.
         Operator = { fg = theme.syn.operator },
-        -- Keyword: any other keyword
-        Keyword = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.keywordStyle or {}),
-        -- Exception: try, catch, throw
-        Exception = { fg = theme.syn.special2 },
+        -- Keyword: any other keyword (bold)
+        Keyword = { fg = theme.syn.keyword, bold = true },
+        -- Exception: try, catch, throw (bold)
+        Exception = { fg = theme.syn.special2, bold = true },
 
         -- PreProc: generic Preprocessor
         PreProc = { fg = theme.syn.preproc },
 
         -- Type: int, long, char, etc.
-        Type = vim.tbl_extend("force", { fg = theme.syn.type }, config.typeStyle or {}),
+        Type = { fg = theme.syn.type },
 
         -- Special: any special symbol
         Special = { fg = theme.syn.special1 },
@@ -60,7 +60,7 @@ function M.setup(colors, config)
         Error = { fg = theme.diag.error },
 
         -- Todo: anything that needs extra attention
-        Todo = { fg = theme.ui.fg_reverse, bg = theme.diag.info },
+        Todo = { fg = theme.ui.fg_reverse, bg = theme.diag.info, bold = true },
 
         qfLineNr = { link = "lineNr" },
         qfFileName = { link = "Directory" },

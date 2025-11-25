@@ -18,24 +18,24 @@ function M.setup(colors, config)
         Character = { link = "String" },
         -- Number: a number constant
         Number = { fg = theme.syn.number },
-        -- Boolean: a boolean constant (bold)
-        Boolean = { fg = theme.syn.constant, bold = true },
+        -- Boolean: a boolean constant
+        Boolean = { fg = theme.syn.constant },
         -- Float: a floating point constant
         Float = { link = "Number" },
 
         -- Identifier: any variable name
         Identifier = { fg = theme.syn.identifier },
-        -- Function: function name (italic)
-        Function = { fg = theme.syn.fun, italic = true },
+        -- Function: function name
+        Function = { fg = theme.syn.fun },
 
-        -- Statement: any statement (bold)
-        Statement = { fg = theme.syn.statement, bold = true },
+        -- Statement: any statement (italic)
+        Statement = { fg = theme.syn.statement, italic = true },
         -- Operator: "sizeof", "+", "*", etc.
         Operator = { fg = theme.syn.operator },
-        -- Keyword: any other keyword (bold)
-        Keyword = { fg = theme.syn.keyword, bold = true },
-        -- Exception: try, catch, throw (bold)
-        Exception = { fg = theme.syn.special2, bold = true },
+        -- Keyword: any other keyword (italic)
+        Keyword = { fg = theme.syn.keyword, italic = true },
+        -- Exception: try, catch, throw (italic)
+        Exception = { fg = theme.syn.special2, italic = true },
 
         -- PreProc: generic Preprocessor
         PreProc = { fg = theme.syn.preproc },
@@ -60,7 +60,7 @@ function M.setup(colors, config)
         Error = { fg = theme.diag.error },
 
         -- Todo: anything that needs extra attention
-        Todo = { fg = theme.ui.fg_reverse, bg = theme.diag.info, bold = true },
+        Todo = { fg = theme.ui.fg_reverse, bg = theme.diag.info },
 
         qfLineNr = { link = "lineNr" },
         qfFileName = { link = "Directory" },

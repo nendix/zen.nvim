@@ -11,6 +11,11 @@
 ---@field stone string
 ---@field slate string
 ---@field ash string
+---@field sage string
+---@field sand string
+---@field rose string
+---@field lavender string
+---@field sky string
 ---@field mist string
 ---@field diag_error string
 ---@field diag_warn string
@@ -26,44 +31,48 @@
 ---@field vcs_changed string
 
 local palette = {
-    -- Background shades (very dark, monochromatic)
-    bg0 = "#0a0a0f",      -- Deepest background
-    bg1 = "#12121a",      -- Slightly lighter for UI elements
-    bg2 = "#1a1a24",      -- Cursor line, folded
-    bg3 = "#24242f",      -- Visual selection, active elements
-    bg4 = "#2e2e3a",      -- Lighter UI elements
+	-- Background colors
+	bg0 = "#030303", -- Deepest background
+	bg1 = "#131313", -- Slightly lighter for UI elements
+	bg2 = "#292929", -- Cursor line, folded
+	bg3 = "#424242", -- Visual selection, active elements
+	bg4 = "#5b5b5b", -- Lighter UI elements
 
-    -- Foreground shades (muted, not harsh)
-    fg = "#b0b0b8",       -- Main text
-    fg_dim = "#707078",   -- Dimmed text, comments
-    fg_muted = "#505058", -- Very muted, line numbers inactive
+	-- Foreground colors
+	fg = "#ececec", -- Main text
+	fg_dim = "#767676", -- Dimmed text, comments
+	fg_muted = "#424242", -- Very muted, line numbers inactive
 
-    -- Extended gray palette for syntax
-    silver = "#9a9aa2",   -- Slightly brighter than fg (constants, numbers)
-    stone = "#8a8a92",    -- Neutral gray (types)
-    slate = "#787880",    -- Between fg_dim and stone (operators, punct)
-    ash = "#606068",      -- Subtle elements
+	-- Syntax colors
+	silver = "#cdcdcd", -- Keywords, statements
+	stone = "#afafaf", -- Functions
+	slate = "#929292", -- Operators, parameters, preproc
+	ash = "#5b5b5b", -- Punctuation
 
-    -- Single accent color (used very sparingly)
-    mist = "#7a8a9a",     -- For search highlights, special UI
+	sage = "#a0b9a0", -- Green - strings
+	sand = "#b9b0a0", -- Orange/warm - types
+	rose = "#b9a0a0", -- Pink - numbers
+	sky = "#a0a0b9", -- Blue - constants
+	lavender = "#b0a0b9", -- Purple
+	mist = "#a0b0b0", -- Cyan - regex
 
-    -- Diagnostics (muted but distinguishable)
-    diag_error = "#8a5a5a",   -- Muted red
-    diag_warn = "#8a7a5a",    -- Muted yellow
-    diag_info = "#5a7a8a",    -- Muted blue
-    diag_hint = "#6a8a7a",    -- Muted teal
-    diag_ok = "#6a8a6a",      -- Muted green
+	-- Diagnostics colors
+	diag_error = "#a06060", -- Muted red
+	diag_warn = "#a09060", -- Muted yellow
+	diag_info = "#6090a0", -- Muted blue
+	diag_hint = "#70a090", -- Muted teal
+	diag_ok = "#70a070", -- Muted green
 
-    -- Diff colors (very subtle background tints)
-    diff_add = "#1a2a1a",     -- Very subtle green
-    diff_delete = "#2a1a1a",  -- Very subtle red
-    diff_change = "#1a1a2a",  -- Very subtle blue
-    diff_text = "#2a2a1a",    -- Very subtle yellow
+	-- Diff colors
+	diff_add = "#1a2a1a", -- Subtle green
+	diff_delete = "#2a1a1a", -- Subtle red
+	diff_change = "#2a2a1a", -- Subtle yellow
+	diff_text = "#3a3020", -- Emphasized yellow/orange for changed text
 
-    -- VCS colors (slightly more visible than diff)
-    vcs_added = "#5a7a5a",    -- Muted green
-    vcs_removed = "#7a5a5a",  -- Muted red
-    vcs_changed = "#7a7a5a",  -- Muted yellow
+	-- VCS colors
+	vcs_added = "#608060",
+	vcs_removed = "#806060",
+	vcs_changed = "#808060",
 }
 
 local M = {}
@@ -71,24 +80,24 @@ local M = {}
 ---@param opts? { colors?: table }
 ---@return { theme: table, palette: PaletteColors }
 function M.setup(opts)
-    opts = opts or {}
-    local zen = require("zen")
-    local override_colors = opts.colors or zen.config.colors
+	opts = opts or {}
+	local zen = require("zen")
+	local override_colors = opts.colors or zen.config.colors
 
-    -- Merge palette with overrides
-    local updated_palette = vim.tbl_extend("force", palette, override_colors.palette or {})
+	-- Merge palette with overrides
+	local updated_palette = vim.tbl_extend("force", palette, override_colors.palette or {})
 
-    -- Generate theme colors
-    local theme_colors = require("zen.themes").theme(updated_palette)
+	-- Generate theme colors
+	local theme_colors = require("zen.themes").theme(updated_palette)
 
-    -- Apply theme overrides
-    local theme_overrides = override_colors.theme or {}
-    local updated_theme = vim.tbl_deep_extend("force", theme_colors, theme_overrides)
+	-- Apply theme overrides
+	local theme_overrides = override_colors.theme or {}
+	local updated_theme = vim.tbl_deep_extend("force", theme_colors, theme_overrides)
 
-    return {
-        theme = updated_theme,
-        palette = updated_palette,
-    }
+	return {
+		theme = updated_theme,
+		palette = updated_palette,
+	}
 end
 
 return M

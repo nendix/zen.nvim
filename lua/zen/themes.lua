@@ -18,6 +18,9 @@
 ---@field special1 string
 ---@field special2 string
 ---@field special3 string
+---@field tag string
+---@field tag_attribute string
+---@field tag_delimiter string
 
 ---@class DiagnosticsElements
 ---@field error string
@@ -149,6 +152,9 @@ function M.theme(palette)
 			special1 = palette.stone, -- medium bright
 			special2 = palette.silver, -- bright gray
 			special3 = palette.stone, -- medium bright
+			tag = palette.lavender, -- HTML/XML tag names
+			tag_attribute = palette.mist, -- HTML/XML attributes
+			tag_delimiter = palette.slate, -- HTML/XML delimiters < > /
 		},
 		diag = {
 			error = palette.diag_error,

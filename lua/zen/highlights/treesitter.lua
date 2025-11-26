@@ -124,12 +124,18 @@ function M.setup(colors, config)
         -- @diff.delta: changed text (for diff files)
         ["@diff.delta"] = { fg = theme.vcs.changed },
 
-        -- @tag: XML-style tag names
-        ["@tag"] = { fg = theme.syn.keyword },
+        -- @tag: XML-style tag names (HTML/JSX/XML)
+        ["@tag"] = { fg = theme.syn.tag },
+        -- @tag.builtin: built-in HTML tags (html, head, body, div, span, etc.)
+        ["@tag.builtin"] = { fg = theme.syn.tag },
         -- @tag.attribute: XML-style tag attributes
-        ["@tag.attribute"] = { fg = theme.syn.identifier, italic = true },
+        ["@tag.attribute"] = { fg = theme.syn.tag_attribute },
         -- @tag.delimiter: XML-style tag delimiters
-        ["@tag.delimiter"] = { fg = theme.syn.punct },
+        ["@tag.delimiter"] = { fg = theme.syn.tag_delimiter },
+
+        -- HTML/JSX specific
+        ["@string.special.url.html"] = { fg = theme.syn.string, underline = true },
+        ["@operator.html"] = { fg = theme.syn.tag_delimiter },
     }
 end
 

@@ -39,3 +39,7 @@ require("zen").setup({
 
 vim.cmd("colorscheme zen")
 ```
+
+## Inspiration
+
+Inspired by [kanso](https://github.com/webhooked/kanso.nvim).

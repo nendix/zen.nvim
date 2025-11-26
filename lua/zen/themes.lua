@@ -77,6 +77,14 @@
 ---@field pmenu MenuElements
 ---@field float FloatElements
 
+---@class StatuslineElements
+---@field normal string
+---@field insert string
+---@field visual string
+---@field replace string
+---@field command string
+---@field other string
+
 ---@class ThemeColors
 ---@field syn SyntaxElements
 ---@field diag DiagnosticsElements
@@ -84,6 +92,7 @@
 ---@field diff DiffElements
 ---@field ui UiElements
 ---@field term string[]
+---@field statusline StatuslineElements
 
 local M = {}
 
@@ -191,6 +200,14 @@ function M.theme(palette)
 			palette.lavender, -- bright magenta
 			palette.mist, -- bright cyan
 			palette.fg, -- bright white
+		},
+		statusline = {
+			normal = palette.silver, -- bright gray for normal mode
+			insert = palette.diag_ok, -- green for insert
+			visual = palette.lavender, -- purple for visual
+			replace = palette.rose, -- pink for replace
+			command = palette.sand, -- tan for command
+			other = palette.slate, -- gray for other modes
 		},
 	}
 end

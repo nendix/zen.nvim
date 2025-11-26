@@ -1,0 +1,34 @@
+# zen colorscheme for Alacritty
+# https://github.com/nendix/zen.nvim
+
+[colors.primary]
+foreground = "#eeeeee"
+background = "#0a0a0a"
+
+[colors.cursor]
+text = "#0a0a0a"
+cursor = "#eeeeee"
+
+[colors.selection]
+text = "#eeeeee"
+background = "#323232"
+
+[colors.normal]
+black = "#1e1e1e"
+red = "#b9a0a0"
+green = "#a0b9a0"
+yellow = "#b9b0a0"
+blue = "#a0a0b9"
+magenta = "#b0a0b9"
+cyan = "#a0b0b0"
+white = "#ababab"
+
+[colors.bright]
+black = "#323232"
+red = "#b9a0a0"
+green = "#a0b9a0"
+yellow = "#b9b0a0"
+blue = "#a0a0b9"
+magenta = "#b0a0b9"
+cyan = "#a0b0b0"
+white = "#d2d2d2"

@@ -19,7 +19,7 @@ function M.setup(colors, config)
         -- Number: a number constant
         Number = { fg = theme.syn.number },
         -- Boolean: a boolean constant
-        Boolean = { fg = theme.syn.constant },
+        Boolean = { fg = theme.syn.constant, bold = true },
         -- Float: a floating point constant
         Float = { link = "Number" },
 
@@ -30,26 +30,54 @@ function M.setup(colors, config)
 
         -- Statement: any statement (italic)
         Statement = { fg = theme.syn.statement, italic = true },
+        -- Conditional: if, then, else, endif, switch, etc.
+        Conditional = { fg = theme.syn.keyword, italic = true },
+        -- Repeat: for, do, while, etc.
+        Repeat = { fg = theme.syn.keyword, italic = true },
+        -- Label: case, default, etc.
+        Label = { fg = theme.syn.special1 },
         -- Operator: "sizeof", "+", "*", etc.
         Operator = { fg = theme.syn.operator },
         -- Keyword: any other keyword (italic)
         Keyword = { fg = theme.syn.keyword, italic = true },
         -- Exception: try, catch, throw (italic)
-        Exception = { fg = theme.syn.special2, italic = true },
+        Exception = { fg = theme.syn.keyword, italic = true },
 
         -- PreProc: generic Preprocessor
         PreProc = { fg = theme.syn.preproc },
+        -- Include: preprocessor #include
+        Include = { fg = theme.syn.preproc, italic = true },
+        -- Define: preprocessor #define
+        Define = { fg = theme.syn.preproc },
+        -- Macro: same as Define
+        Macro = { fg = theme.syn.preproc, bold = true },
+        -- PreCondit: preprocessor #if, #else, #endif, etc.
+        PreCondit = { fg = theme.syn.preproc },
 
         -- Type: int, long, char, etc.
         Type = { fg = theme.syn.type },
+        -- StorageClass: static, register, volatile, etc.
+        StorageClass = { fg = theme.syn.keyword, italic = true },
+        -- Structure: struct, union, enum, etc.
+        Structure = { fg = theme.syn.type },
+        -- Typedef: a typedef
+        Typedef = { fg = theme.syn.type, italic = true },
 
         -- Special: any special symbol
         Special = { fg = theme.syn.special1 },
+        -- SpecialChar: special character in a constant
+        SpecialChar = { fg = theme.syn.regex },
+        -- Tag: you can use CTRL-] on this
+        Tag = { fg = theme.syn.tag },
         -- Delimiter: character that needs attention
         Delimiter = { fg = theme.syn.punct },
+        -- SpecialComment: special things inside a comment
+        SpecialComment = { fg = theme.syn.comment, bold = true },
+        -- Debug: debugging statements
+        Debug = { fg = theme.syn.special1 },
 
         -- Underlined: text that stands out, HTML links
-        Underlined = { fg = theme.syn.special1, underline = true },
+        Underlined = { fg = theme.syn.regex, underline = true },
         Bold = { bold = true },
         Italic = { italic = true },
 
@@ -60,15 +88,54 @@ function M.setup(colors, config)
         Error = { fg = theme.diag.error },
 
         -- Todo: anything that needs extra attention
-        Todo = { fg = theme.ui.fg_reverse, bg = theme.diag.info },
+        Todo = { fg = theme.diag.info, bold = true },
 
         qfLineNr = { link = "lineNr" },
         qfFileName = { link = "Directory" },
 
         -- Markdown
+        markdownH1 = { fg = theme.syn.keyword, bold = true },
+        markdownH2 = { fg = theme.syn.keyword, bold = true },
+        markdownH3 = { fg = theme.syn.fun, bold = true },
+        markdownH4 = { fg = theme.syn.fun, bold = true },
+        markdownH5 = { fg = theme.syn.identifier },
+        markdownH6 = { fg = theme.syn.identifier },
+        markdownHeadingDelimiter = { fg = theme.syn.punct, bold = true },
         markdownCode = { fg = theme.syn.string },
         markdownCodeBlock = { fg = theme.syn.string },
-        markdownEscape = { fg = theme.ui.none },
+        markdownCodeDelimiter = { fg = theme.syn.punct },
+        markdownBlockquote = { fg = theme.syn.comment, italic = true },
+        markdownListMarker = { fg = theme.syn.punct },
+        markdownOrderedListMarker = { fg = theme.syn.punct },
+        markdownRule = { fg = theme.syn.punct },
+        markdownHeadingRule = { fg = theme.syn.punct },
+        markdownUrlDelimiter = { fg = theme.syn.punct },
+        markdownLinkDelimiter = { fg = theme.syn.punct },
+        markdownLinkTextDelimiter = { fg = theme.syn.punct },
+        markdownUrl = { fg = theme.syn.regex, underline = true },
+        markdownUrlTitleDelimiter = { fg = theme.syn.string },
+        markdownLinkText = { fg = theme.syn.regex },
+        markdownIdDeclaration = { link = "markdownLinkText" },
+        markdownBold = { bold = true },
+        markdownItalic = { italic = true },
+        markdownBoldItalic = { bold = true, italic = true },
+        markdownEscape = { fg = theme.syn.regex },
+
+        -- Help
+        helpCommand = { fg = theme.syn.string },
+        helpExample = { fg = theme.syn.comment },
+        helpHeader = { fg = theme.syn.keyword, bold = true },
+        helpSectionDelim = { fg = theme.syn.punct },
+
+        -- Diff (legacy vim diff syntax)
+        diffAdded = { fg = theme.vcs.added },
+        diffRemoved = { fg = theme.vcs.removed },
+        diffChanged = { fg = theme.vcs.changed },
+        diffOldFile = { fg = theme.vcs.removed },
+        diffNewFile = { fg = theme.vcs.added },
+        diffFile = { fg = theme.syn.comment },
+        diffLine = { fg = theme.syn.comment },
+        diffIndexLine = { fg = theme.syn.comment },
     }
 end
 

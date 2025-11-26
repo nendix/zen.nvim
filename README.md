@@ -1,4 +1,4 @@
-# zen.nvim
+# zen
 
 A minimal, dark colorscheme for Neovim with subtle accent colors.
 

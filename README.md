@@ -2,6 +2,8 @@
 
 A minimal, dark colorscheme for Neovim with subtle accent colors.
 
+![Palette](palette.png)
+
 ## Installation
 
 ### lazy.nvim

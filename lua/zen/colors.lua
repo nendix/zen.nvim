@@ -39,15 +39,15 @@ local palette = {
 	bg4 = "#464646", -- Lighter UI elements
 
 	-- Foreground colors
-	fg = "#eeeeee", -- Main text
-	fg_dim = "#707070", -- Dimmed text, comments
-	fg_muted = "#3c3c3c", -- Very muted, line numbers inactive
+	fg = "#f1f1f1", -- Main text
+	fg_dim = "#797979", -- Dimmed text, comments
+	fg_muted = "#616161", -- Very muted, line numbers inactive
 
 	-- Syntax colors
-	silver = "#d2d2d2", -- Keywords, statements
-	stone = "#ababab", -- Functions
-	slate = "#858585", -- Operators, parameters, preproc
-	ash = "#5a5a5a", -- Punctuation
+	silver = "#d9d9d9", -- Keywords, statements
+	stone = "#c1c1c1", -- Functions
+	slate = "#a9a9a9", -- Operators, parameters, preproc
+	ash = "#919191", -- Punctuation
 
 	sage = "#a0b9a0", -- Green - strings
 	sand = "#b9b0a0", -- Orange/warm - types
@@ -57,7 +57,7 @@ local palette = {
 	mist = "#a0b0b0", -- Cyan - regex
 
 	-- Diagnostics colors
-	diag_error = "#a06060", -- Muted red
+	diag_error = "#c07070", -- Muted red
 	diag_warn = "#a09060", -- Muted yellow
 	diag_info = "#6090a0", -- Muted blue
 	diag_hint = "#70a090", -- Muted teal
@@ -70,9 +70,9 @@ local palette = {
 	diff_text = "#3a3020", -- Emphasized yellow/orange for changed text
 
 	-- VCS colors
-	vcs_added = "#608060",
-	vcs_removed = "#806060",
-	vcs_changed = "#808060",
+	vcs_added = "#80a080",
+	vcs_removed = "#c08080",
+	vcs_changed = "#a0a060",
 }
 
 local M = {}

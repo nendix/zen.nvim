@@ -3,7 +3,7 @@
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
 [mgr]
-cwd = { fg = "#858585" }
+cwd = { fg = "#a9a9a9" }
 
 # Hovered
 hovered         = { bg = "#1e1e1e" }
@@ -29,15 +29,15 @@ border_symbol = "│"
 border_style  = { fg = "#323232" }
 
 [tabs]
-active   = { fg = "#eeeeee", bg = "#323232", bold = true }
-inactive = { fg = "#5a5a5a", bg = "#141414" }
+active   = { fg = "#f1f1f1", bg = "#323232", bold = true }
+inactive = { fg = "#797979", bg = "#141414" }
 
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = "" }
 
 [mode]
-normal_main = { fg = "#0a0a0a", bg = "#d2d2d2", bold = true }
-normal_alt  = { fg = "#ababab", bg = "#323232" }
+normal_main = { fg = "#0a0a0a", bg = "#d9d9d9", bold = true }
+normal_alt  = { fg = "#c1c1c1", bg = "#323232" }
 
 select_main = { fg = "#0a0a0a", bg = "#b0a0b9", bold = true }
 select_alt  = { fg = "#b0a0b9", bg = "#323232" }
@@ -46,19 +46,19 @@ unset_main = { fg = "#0a0a0a", bg = "#b9a0a0", bold = true }
 unset_alt  = { fg = "#b9a0a0", bg = "#323232" }
 
 [status]
-overall   = { fg = "#858585" }
+overall   = { fg = "#a9a9a9" }
 sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 # Permissions
-perm_sep   = { fg = "#5a5a5a" }
+perm_sep   = { fg = "#797979" }
 perm_type  = { fg = "#a0a0b9" }
 perm_read  = { fg = "#a0b9a0" }
 perm_write = { fg = "#b9a0a0" }
 perm_exec  = { fg = "#b9b0a0" }
 
 # Progress
-progress_label  = { fg = "#eeeeee", bold = true }
+progress_label  = { fg = "#f1f1f1", bold = true }
 progress_normal = { fg = "#a0b9a0", bg = "#323232" }
 progress_error  = { fg = "#a06060", bg = "#323232" }
 
@@ -66,23 +66,23 @@ progress_error  = { fg = "#a06060", bg = "#323232" }
 cols            = 3
 mask            = { bg = "#141414" }
 cand            = { fg = "#a0b0b0" }
-rest            = { fg = "#5a5a5a" }
-desc            = { fg = "#858585" }
+rest            = { fg = "#797979" }
+desc            = { fg = "#a9a9a9" }
 separator       = "  "
-separator_style = { fg = "#5a5a5a" }
+separator_style = { fg = "#797979" }
 
 [confirm]
 border     = { fg = "#323232" }
-title      = { fg = "#eeeeee" }
-content    = { fg = "#858585" }
-list       = { fg = "#ababab" }
+title      = { fg = "#f1f1f1" }
+content    = { fg = "#a9a9a9" }
+list       = { fg = "#c1c1c1" }
 btn_yes    = { fg = "#0a0a0a", bg = "#a0b9a0" }
 btn_no     = { fg = "#0a0a0a", bg = "#b9a0a0" }
 btn_labels = [ "  [Y]es  ", "  (N)o  " ]
 
 [spot]
 border   = { fg = "#323232" }
-title    = { fg = "#eeeeee" }
+title    = { fg = "#f1f1f1" }
 tbl_col  = { fg = "#b0a0b9" }
 tbl_cell = { fg = "#a0a0b9", reversed = true }
 
@@ -97,19 +97,19 @@ icon_error = ""
 
 [pick]
 border   = { fg = "#323232" }
-active   = { fg = "#eeeeee", bg = "#323232", bold = true }
-inactive = { fg = "#858585" }
+active   = { fg = "#f1f1f1", bg = "#323232", bold = true }
+inactive = { fg = "#a9a9a9" }
 
 [input]
 border   = { fg = "#323232" }
-title    = { fg = "#eeeeee" }
-value    = { fg = "#ababab" }
+title    = { fg = "#f1f1f1" }
+value    = { fg = "#c1c1c1" }
 selected = { reversed = true }
 
 [cmp]
 border   = { fg = "#323232" }
 active   = { reversed = true }
-inactive = { fg = "#858585" }
+inactive = { fg = "#a9a9a9" }
 
 icon_file    = ""
 icon_folder  = ""
@@ -117,15 +117,15 @@ icon_command = ""
 
 [tasks]
 border  = { fg = "#323232" }
-title   = { fg = "#eeeeee" }
+title   = { fg = "#f1f1f1" }
 hovered = { fg = "#b0a0b9", bold = true }
 
 [help]
 on      = { fg = "#a0b0b0" }
 run     = { fg = "#b0a0b9" }
-desc    = { fg = "#858585" }
+desc    = { fg = "#a9a9a9" }
 hovered = { reversed = true, bold = true }
-footer  = { fg = "#5a5a5a", bg = "#141414" }
+footer  = { fg = "#797979", bg = "#141414" }
 
 [filetype]
 rules = [

@@ -184,22 +184,22 @@ function M.theme(palette)
 			changed = palette.vcs_changed,
 		},
 		term = {
-			palette.bg0, -- black
+			palette.bg2, -- black
 			palette.rose, -- red
 			palette.sage, -- green
 			palette.sand, -- yellow
 			palette.sky, -- blue
 			palette.lavender, -- magenta
 			palette.mist, -- cyan
-			palette.fg, -- white
-			palette.bg0, -- bright black
+			palette.stone, -- white
+			palette.bg3, -- bright black
 			palette.rose, -- bright red
 			palette.sage, -- bright green
 			palette.sand, -- bright yellow
 			palette.sky, -- bright blue
 			palette.lavender, -- bright magenta
 			palette.mist, -- bright cyan
-			palette.fg, -- bright white
+			palette.silver, -- bright white
 		},
 		statusline = {
 			normal = palette.silver, -- bright gray for normal mode

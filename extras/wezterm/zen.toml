@@ -1,9 +1,9 @@
 [colors]
-foreground = "#eeeeee"
+foreground = "#f1f1f1"
 background = "#0a0a0a"
 cursor_fg = "#0a0a0a"
-cursor_bg = "#eeeeee"
-selection_fg = "#eeeeee"
+cursor_bg = "#f1f1f1"
+selection_fg = "#f1f1f1"
 selection_bg = "#323232"
 
 ansi = [
@@ -14,7 +14,7 @@ ansi = [
   "#a0a0b9",
   "#b0a0b9",
   "#a0b0b0",
-  "#ababab",
+  "#c1c1c1",
 ]
 
 brights = [
@@ -25,7 +25,7 @@ brights = [
   "#a0a0b9",
   "#b0a0b9",
   "#a0b0b0",
-  "#d2d2d2",
+  "#d9d9d9",
 ]
 
 [metadata]

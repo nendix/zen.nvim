@@ -24,32 +24,32 @@ local bg_inactive = transparent and "NONE" or colors.bg1
 
 return {
 	normal = {
-		a = { bg = colors.silver, fg = colors.bg0, gui = "bold" },
+		a = { bg = colors.silver, fg = colors.bg0 },
 		b = { bg = colors.bg3, fg = colors.stone },
 		c = { bg = bg_c, fg = colors.slate },
 	},
 	insert = {
-		a = { bg = colors.sage, fg = colors.bg0, gui = "bold" },
+		a = { bg = colors.sage, fg = colors.bg0 },
 		b = { bg = colors.bg3, fg = colors.stone },
 		c = { bg = bg_c, fg = colors.slate },
 	},
 	visual = {
-		a = { bg = colors.lavender, fg = colors.bg0, gui = "bold" },
+		a = { bg = colors.lavender, fg = colors.bg0 },
 		b = { bg = colors.bg3, fg = colors.stone },
 		c = { bg = bg_c, fg = colors.slate },
 	},
 	replace = {
-		a = { bg = colors.rose, fg = colors.bg0, gui = "bold" },
+		a = { bg = colors.rose, fg = colors.bg0 },
 		b = { bg = colors.bg3, fg = colors.stone },
 		c = { bg = bg_c, fg = colors.slate },
 	},
 	command = {
-		a = { bg = colors.sand, fg = colors.bg0, gui = "bold" },
+		a = { bg = colors.sand, fg = colors.bg0 },
 		b = { bg = colors.bg3, fg = colors.stone },
 		c = { bg = bg_c, fg = colors.slate },
 	},
 	inactive = {
-		a = { bg = bg_inactive, fg = colors.fg_dim, gui = "bold" },
+		a = { bg = bg_inactive, fg = colors.fg_dim },
 		b = { bg = bg_inactive, fg = colors.fg_dim },
 		c = { bg = bg_inactive, fg = colors.fg_dim },
 	},

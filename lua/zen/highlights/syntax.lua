@@ -19,7 +19,7 @@ function M.setup(colors, config)
         -- Number: a number constant
         Number = { fg = theme.syn.number },
         -- Boolean: a boolean constant
-        Boolean = { fg = theme.syn.constant, bold = true },
+        Boolean = { fg = theme.syn.constant },
         -- Float: a floating point constant
         Float = { link = "Number" },
 
@@ -50,7 +50,7 @@ function M.setup(colors, config)
         -- Define: preprocessor #define
         Define = { fg = theme.syn.preproc },
         -- Macro: same as Define
-        Macro = { fg = theme.syn.preproc, bold = true },
+        Macro = { fg = theme.syn.preproc },
         -- PreCondit: preprocessor #if, #else, #endif, etc.
         PreCondit = { fg = theme.syn.preproc },
 
@@ -61,7 +61,7 @@ function M.setup(colors, config)
         -- Structure: struct, union, enum, etc.
         Structure = { fg = theme.syn.type },
         -- Typedef: a typedef
-        Typedef = { fg = theme.syn.type, italic = true },
+        Typedef = { fg = theme.syn.type },
 
         -- Special: any special symbol
         Special = { fg = theme.syn.special1 },

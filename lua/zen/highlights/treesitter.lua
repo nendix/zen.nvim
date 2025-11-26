@@ -19,9 +19,9 @@ function M.setup(colors, config)
         -- @constant: constant identifiers
         ["@constant"] = { fg = theme.syn.constant },
         -- @constant.builtin: built-in constant values (true, false, nil)
-        ["@constant.builtin"] = { fg = theme.syn.constant, bold = true },
+        ["@constant.builtin"] = { fg = theme.syn.constant },
         -- @constant.macro: constants defined by macros
-        ["@constant.macro"] = { fg = theme.syn.constant, bold = true },
+        ["@constant.macro"] = { fg = theme.syn.constant },
 
         -- @module: modules or namespaces
         ["@module"] = { fg = theme.syn.preproc },
@@ -52,7 +52,7 @@ function M.setup(colors, config)
         ["@character.special"] = { fg = theme.syn.regex },
 
         -- @boolean: boolean literals
-        ["@boolean"] = { fg = theme.syn.constant, bold = true },
+        ["@boolean"] = { fg = theme.syn.constant },
 
         -- @number: numeric literals
         ["@number"] = { fg = theme.syn.number },
@@ -96,7 +96,7 @@ function M.setup(colors, config)
         -- @keyword.import: keywords for including modules (italic)
         ["@keyword.import"] = { fg = theme.syn.preproc, italic = true },
         -- @keyword.type: keywords for type definitions (class, struct)
-        ["@keyword.type"] = { fg = theme.syn.keyword, italic = true },
+        ["@keyword.type"] = { fg = theme.syn.keyword },
         -- @keyword.modifier: modifiers (public, private, static)
         ["@keyword.modifier"] = { fg = theme.syn.keyword, italic = true },
         -- @keyword.return: keywords like `return` and `yield` (italic)
@@ -119,11 +119,11 @@ function M.setup(colors, config)
         -- @type: types
         ["@type"] = { fg = theme.syn.type },
         -- @type.builtin: built-in types
-        ["@type.builtin"] = { fg = theme.syn.type, italic = true },
+        ["@type.builtin"] = { fg = theme.syn.type },
         -- @type.definition: type definitions
         ["@type.definition"] = { fg = theme.syn.type },
         -- @type.qualifier: type qualifiers (const, volatile)
-        ["@type.qualifier"] = { fg = theme.syn.keyword, italic = true },
+        ["@type.qualifier"] = { fg = theme.syn.keyword },
 
         -- @punctuation.delimiter: delimiters (e.g. `;`, `.`, `,`)
         ["@punctuation.delimiter"] = { fg = theme.syn.punct },

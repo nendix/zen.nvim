@@ -203,7 +203,7 @@ function M.theme(palette)
 		},
 		statusline = {
 			normal = palette.silver, -- bright gray for normal mode
-			insert = palette.diag_ok, -- green for insert
+			insert = palette.sage, -- sage green for insert
 			visual = palette.lavender, -- purple for visual
 			replace = palette.rose, -- pink for replace
 			command = palette.sand, -- tan for command

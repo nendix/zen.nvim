@@ -106,6 +106,7 @@ All palette colors can be found in [lua/zen/colors.lua](lua/zen/colors.lua).
 - [Alacritty](extras/alacritty/)
 - [Ghostty](extras/ghostty/)
 - [Kitty](extras/kitty/)
+- [Tmux](extras/tmux/)
 - [Wezterm](extras/wezterm/)
 - [Yazi](extras/yazi/)
 

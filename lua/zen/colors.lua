@@ -32,22 +32,22 @@
 
 local palette = {
 	-- Background colors
-	bg0 = "#0a0a0a", -- Deepest background
-	bg1 = "#141414", -- UI elements
-	bg2 = "#1e1e1e", -- Cursor line, folded
+	bg0 = "#121212", -- Deepest background
+	bg1 = "#1a1a1a", -- UI elements
+	bg2 = "#222222", -- Cursor line, folded
 	bg3 = "#323232", -- Visual selection
-	bg4 = "#464646", -- Lighter UI elements
+	bg4 = "#424242", -- Lighter UI elements
 
 	-- Foreground colors
-	fg = "#f1f1f1", -- Main text
-	fg_dim = "#797979", -- Dimmed text, comments
-	fg_muted = "#616161", -- Very muted, line numbers inactive
+	fg = "#e0e0e0", -- Main text
+	fg_dim = "#767676", -- Dimmed text, comments
+	fg_muted = "#626262", -- Very muted, line numbers inactive
 
 	-- Syntax colors
-	silver = "#d9d9d9", -- Keywords, statements
-	stone = "#c1c1c1", -- Functions
-	slate = "#a9a9a9", -- Operators, parameters, preproc
-	ash = "#919191", -- Punctuation
+	silver = "#d0d0d0", -- Keywords, statements
+	stone = "#b2b2b2", -- Functions
+	slate = "#9e9e9e", -- Operators, parameters, preproc
+	ash = "#8a8a8a", -- Punctuation
 
 	sage = "#a0b9a0", -- Green - strings
 	sand = "#b9b0a0", -- Orange/warm - types

@@ -2,26 +2,26 @@
 # https://github.com/nendix/zen.nvim
 
 [colors.primary]
-foreground = "#f1f1f1"
-background = "#0a0a0a"
+foreground = "#e0e0e0"
+background = "#121212"
 
 [colors.cursor]
-text = "#0a0a0a"
-cursor = "#f1f1f1"
+text = "#121212"
+cursor = "#e0e0e0"
 
 [colors.selection]
-text = "#f1f1f1"
+text = "#e0e0e0"
 background = "#323232"
 
 [colors.normal]
-black = "#1e1e1e"
+black = "#222222"
 red = "#b9a0a0"
 green = "#a0b9a0"
 yellow = "#b9b0a0"
 blue = "#a0a0b9"
 magenta = "#b0a0b9"
 cyan = "#a0b0b0"
-white = "#c1c1c1"
+white = "#b2b2b2"
 
 [colors.bright]
 black = "#323232"
@@ -31,4 +31,4 @@ yellow = "#b9b0a0"
 blue = "#a0a0b9"
 magenta = "#b0a0b9"
 cyan = "#a0b0b0"
-white = "#d9d9d9"
+white = "#d0d0d0"

@@ -53,22 +53,6 @@ vim.cmd("colorscheme zen")
 
 ```lua
 require("zen").setup({
-  colors = {
-    palette = {},  -- override palette colors
-    theme = {},    -- override theme colors
-  },
-})
-
-vim.cmd("colorscheme zen")
-```
-
-<details>
-<summary><strong>Customization</strong></summary>
-
-Override palette or theme colors:
-
-```lua
-require("zen").setup({
   undercurl = true,
   transparent = false,
   dimInactive = false,
@@ -77,8 +61,8 @@ require("zen").setup({
   keywordStyle = { italic = true },
   compile = false,
   colors = {
-    palette = {},
-    theme = {},
+    palette = {},  -- override palette colors
+    theme = {},    -- override theme colors
   },
   overrides = function(colors)
     return {}

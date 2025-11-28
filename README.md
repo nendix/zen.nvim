@@ -67,7 +67,7 @@ require("zen").setup({
   end,
 })
 
-vim.cmd("colorscheme zen")
+vim.cmd.colorscheme("zen")
 ```
 
 <details>

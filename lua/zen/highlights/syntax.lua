@@ -7,8 +7,8 @@ function M.setup(colors, config)
     config = config or require("zen").config
 
     return {
-        -- Comment: any comment (dimmed + italic)
-        Comment = { fg = theme.syn.comment, italic = true },
+        -- Comment: any comment
+        Comment = vim.tbl_extend("force", { fg = theme.syn.comment }, config.commentStyle),
 
         -- Constant: any constant
         Constant = { fg = theme.syn.constant },
@@ -26,27 +26,27 @@ function M.setup(colors, config)
         -- Identifier: any variable name
         Identifier = { fg = theme.syn.identifier },
         -- Function: function name
-        Function = { fg = theme.syn.fun },
+        Function = vim.tbl_extend("force", { fg = theme.syn.fun }, config.functionStyle),
 
-        -- Statement: any statement (italic)
-        Statement = { fg = theme.syn.statement, italic = true },
+        -- Statement: any statement
+        Statement = vim.tbl_extend("force", { fg = theme.syn.statement }, config.statementStyle),
         -- Conditional: if, then, else, endif, switch, etc.
-        Conditional = { fg = theme.syn.keyword, italic = true },
+        Conditional = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.keywordStyle),
         -- Repeat: for, do, while, etc.
-        Repeat = { fg = theme.syn.keyword, italic = true },
+        Repeat = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.keywordStyle),
         -- Label: case, default, etc.
         Label = { fg = theme.syn.special1 },
         -- Operator: "sizeof", "+", "*", etc.
         Operator = { fg = theme.syn.operator },
-        -- Keyword: any other keyword (italic)
-        Keyword = { fg = theme.syn.keyword, italic = true },
-        -- Exception: try, catch, throw (italic)
-        Exception = { fg = theme.syn.keyword, italic = true },
+        -- Keyword: any other keyword
+        Keyword = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.keywordStyle),
+        -- Exception: try, catch, throw
+        Exception = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.keywordStyle),
 
         -- PreProc: generic Preprocessor
         PreProc = { fg = theme.syn.preproc },
         -- Include: preprocessor #include
-        Include = { fg = theme.syn.preproc, italic = true },
+        Include = vim.tbl_extend("force", { fg = theme.syn.preproc }, config.keywordStyle),
         -- Define: preprocessor #define
         Define = { fg = theme.syn.preproc },
         -- Macro: same as Define
@@ -55,13 +55,13 @@ function M.setup(colors, config)
         PreCondit = { fg = theme.syn.preproc },
 
         -- Type: int, long, char, etc.
-        Type = { fg = theme.syn.type },
+        Type = vim.tbl_extend("force", { fg = theme.syn.type }, config.typeStyle),
         -- StorageClass: static, register, volatile, etc.
-        StorageClass = { fg = theme.syn.keyword, italic = true },
+        StorageClass = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.keywordStyle),
         -- Structure: struct, union, enum, etc.
-        Structure = { fg = theme.syn.type },
+        Structure = vim.tbl_extend("force", { fg = theme.syn.type }, config.typeStyle),
         -- Typedef: a typedef
-        Typedef = { fg = theme.syn.type },
+        Typedef = vim.tbl_extend("force", { fg = theme.syn.type }, config.typeStyle),
 
         -- Special: any special symbol
         Special = { fg = theme.syn.special1 },

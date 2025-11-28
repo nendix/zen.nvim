@@ -77,6 +77,13 @@ local palette = {
 
 local M = {}
 
+--- Get the current colors (palette and theme)
+--- Can be called after colorscheme is loaded to access colors in user config
+---@return { theme: table, palette: PaletteColors }
+function M.get()
+	return M.setup()
+end
+
 ---@param opts? { colors?: table }
 ---@return { theme: table, palette: PaletteColors }
 function M.setup(opts)

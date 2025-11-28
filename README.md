@@ -59,7 +59,10 @@ require("zen").setup({
   dimInactive = false,
   terminalColors = true,
   commentStyle = { italic = true },
+  functionStyle = {},
   keywordStyle = { italic = true },
+  statementStyle = {},
+  typeStyle = {},
   compile = false,
   colors = {
     palette = {},  -- override palette colors
@@ -70,10 +73,48 @@ require("zen").setup({
   end,
 })
 
-vim.cmd.colorscheme("zen")
+vim.cmd("colorscheme zen")
+```
+
+<details>
+<summary><strong>Customization</strong></summary>
+
+Override palette or theme colors:
+
+```lua
+require("zen").setup({
+  colors = {
+    palette = {
+      bg0 = "#0a0a0a",
+      sage = "#90a990",
+    },
+    theme = {
+      ui = {
+        bg = "#000000",
+      },
+    },
+  },
+})
 ```
 
 All palette colors can be found in [lua/zen/colors.lua](lua/zen/colors.lua).
+
+</details>
+
+<details>
+<summary><strong>Getting Colors</strong></summary>
+
+Access theme colors in your config:
+
+```lua
+local colors = require("zen.colors").get()
+local palette = colors.palette
+local theme = colors.theme
+
+-- Example: use in lualine or other plugins
+print(palette.sage)  -- "#a0b9a0"
+print(theme.syn.string)  -- "#a0b9a0"
+```
 
 </details>
 

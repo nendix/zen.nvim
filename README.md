@@ -44,12 +44,6 @@ use "nendix/zen.nvim"
 - Neovim 0.8+
 - Terminal with truecolor support
 
-## Usage
-
-```lua
-vim.cmd("colorscheme zen")
-```
-
 ## Configuration
 
 ```lua

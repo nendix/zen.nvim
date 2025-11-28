@@ -14,6 +14,7 @@
 
 [![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
 
+  <img src="showcase.png" />
   <img src="palette.png" />
 </div>
 

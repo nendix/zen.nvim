@@ -17,7 +17,6 @@
 ---@field punct string
 ---@field special1 string
 ---@field special2 string
----@field special3 string
 ---@field tag string
 ---@field tag_attribute string
 ---@field tag_delimiter string
@@ -144,7 +143,7 @@ function M.theme(palette)
 			-- Syntax highlighting: grayscale hierarchy + subtle accent colors
 			string = palette.sage, -- muted green
 			variable = "NONE",
-			number = palette.rose, -- muted pink
+			number = palette.lavender, -- muted purple
 			constant = palette.sky, -- muted blue
 			identifier = palette.fg, -- brightest - variables
 			parameter = palette.slate, -- medium gray
@@ -154,13 +153,12 @@ function M.theme(palette)
 			operator = palette.slate, -- medium gray
 			preproc = palette.slate, -- medium gray
 			type = palette.sand, -- muted tan
-			regex = palette.mist, -- muted teal
+			regex = palette.rose, -- muted pink
 			deprecated = palette.fg_muted, -- very dim
 			punct = palette.ash, -- subtle gray
 			comment = palette.fg_dim, -- dimmed (styled with italic)
 			special1 = palette.stone, -- medium bright
 			special2 = palette.silver, -- bright gray
-			special3 = palette.stone, -- medium bright
 			tag = palette.lavender, -- HTML/XML tag names
 			tag_attribute = palette.mist, -- HTML/XML attributes
 			tag_delimiter = palette.slate, -- HTML/XML delimiters < > /

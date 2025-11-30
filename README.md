@@ -11,15 +11,24 @@
 </div>
 
 <div align="center">
+    [![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
+</div>
 
-[![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
+<div align="center">
+    <h2>Dark Variant</h2>
+    <img src="palette_dark.png" />
+    <img src="showcase_dark.png" />
+</div>
 
-  <img src="showcase.png" />
-  <img src="palette.png" />
+<div align="center">
+    <h2>Light Variant</h2>
+    <img src="palette_light.png" />
+    <img src="showcase_light.png" />
 </div>
 
 ## Features
 
+- Dark and light variants
 - Monochromatic grayscale syntax with muted color accents
 - Extensive `TreeSitter` syntax highlighting support
 - Compatible with popular plugins
@@ -48,6 +57,7 @@ use "nendix/zen.nvim"
 
 ```lua
 require("zen").setup({
+  variant = "dark",     -- "dark" or "light"
   undercurl = true,
   transparent = false,
   dimInactive = false,

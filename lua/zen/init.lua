@@ -2,6 +2,7 @@ local M = {}
 
 ---@class ZenConfig
 M.config = {
+	variant = "dark", -- "dark" or "light"
 	undercurl = true,
 	commentStyle = { italic = true },
 	functionStyle = {},
@@ -47,7 +48,7 @@ function M.load()
 		M.compile()
 		utils.load_compiled()
 	else
-		local colors = require("zen.colors").setup({ colors = M.config.colors })
+		local colors = require("zen.colors").setup({ colors = M.config.colors, variant = M.config.variant })
 		local highlights = require("zen.highlights").setup(colors, M.config)
 		require("zen.highlights").highlight(highlights, M.config.terminalColors and colors.theme.term or {})
 	end
@@ -55,7 +56,7 @@ end
 
 --- Compile the colorscheme for faster loading
 function M.compile()
-	local colors = require("zen.colors").setup({ colors = M.config.colors })
+	local colors = require("zen.colors").setup({ colors = M.config.colors, variant = M.config.variant })
 	local highlights = require("zen.highlights").setup(colors, M.config)
 	require("zen.utils").compile(highlights, M.config.terminalColors and colors.theme.term or {})
 end

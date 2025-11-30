@@ -1,0 +1,33 @@
+[colors]
+foreground = "#1a1a1a"
+background = "#e0e0e0"
+cursor_fg = "#e0e0e0"
+cursor_bg = "#1a1a1a"
+selection_fg = "#1a1a1a"
+selection_bg = "#c0c0c0"
+
+ansi = [
+  "#cccccc",
+  "#6a3a4a",
+  "#3a6a3a",
+  "#6a5a3a",
+  "#3a4a6a",
+  "#5a3a6a",
+  "#3a5a5a",
+  "#3a3a3a",
+]
+
+brights = [
+  "#c0c0c0",
+  "#6a3a4a",
+  "#3a6a3a",
+  "#6a5a3a",
+  "#3a4a6a",
+  "#5a3a6a",
+  "#3a5a5a",
+  "#2a2a2a",
+]
+
+[metadata]
+name = "zen_light"
+author = "nendix"

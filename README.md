@@ -11,19 +11,15 @@
 </div>
 
 <div align="center">
-    [![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
-</div>
-
-<div align="center">
-    <h2>Dark Variant</h2>
-    <img src="palette_dark.png" />
+    <h3>Dark Variant</h3>
     <img src="showcase_dark.png" />
+    <img src="palette_dark.png" />
 </div>
 
 <div align="center">
-    <h2>Light Variant</h2>
-    <img src="palette_light.png" />
+    <h3>Light Variant</h3>
     <img src="showcase_light.png" />
+    <img src="palette_light.png" />
 </div>
 
 ## Features

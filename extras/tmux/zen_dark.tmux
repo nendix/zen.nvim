@@ -1,11 +1,11 @@
-# zen_light.tmux - Minimal light tmux theme for zen.nvim
+# zen.tmux - Minimal tmux theme for zen.nvim
 
 # Colors 
 bg="default"
 fg="default"
-dim="#323232"
-accent="#5a3a6a"
-prefix="#6a3a4a"
+dim="#c0c0c0"
+accent="#b0a0b9"
+prefix="#b9a0a0"
 
 # Pane borders
 set -g pane-border-style "fg=$dim"

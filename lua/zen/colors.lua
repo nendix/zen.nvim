@@ -141,6 +141,9 @@ function M.setup(opts)
 	local zen = require("zen")
 	local override_colors = opts.colors or zen.config.colors
 	local variant = opts.variant or zen.config.variant or "dark"
+	if variant == "auto" then
+		variant = vim.o.background == "light" and "light" or "dark"
+	end
 
 	-- Select base palette based on variant
 	local base_palette = palettes[variant] or palettes.dark

@@ -53,7 +53,7 @@ use "nendix/zen.nvim"
 
 ```lua
 require("zen").setup({
-  variant = "dark",     -- "dark" or "light"
+  variant = "auto",     -- "dark", "light", or "auto" (follows vim.o.background)
   undercurl = true,
   transparent = false,
   dimInactive = false,

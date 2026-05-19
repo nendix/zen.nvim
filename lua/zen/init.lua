@@ -2,7 +2,7 @@ local M = {}
 
 ---@class ZenConfig
 M.config = {
-	variant = "dark", -- "dark", "light", or "auto" (follows vim.o.background)
+	variant = "auto", -- "dark", "light", or "auto" (follows vim.o.background)
 	undercurl = true,
 	commentStyle = { italic = true },
 	functionStyle = {},

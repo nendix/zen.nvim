@@ -2,7 +2,7 @@ local M = {}
 
 ---@class ZenConfig
 M.config = {
-	variant = "dark", -- "dark" or "light"
+	variant = "dark", -- "dark", "light", or "auto" (follows vim.o.background)
 	undercurl = true,
 	commentStyle = { italic = true },
 	functionStyle = {},
@@ -40,25 +40,45 @@ function M.load()
 	vim.g.colors_name = "zen"
 	vim.o.termguicolors = true
 
-	if M.config.compile then
+	local augroup = vim.api.nvim_create_augroup("ZenBackground", { clear = true })
+	if M.config.variant == "auto" then
+		vim.api.nvim_create_autocmd("OptionSet", {
+			group = augroup,
+			pattern = "background",
+			callback = M.load,
+		})
+	end
+
+	if M.config.compile and M.config.variant ~= "auto" then
 		local utils = require("zen.utils")
 		if utils.load_compiled() then
 			return
 		end
 		M.compile()
 		utils.load_compiled()
-	else
-		local colors = require("zen.colors").setup({ colors = M.config.colors, variant = M.config.variant })
-		local highlights = require("zen.highlights").setup(colors, M.config)
-		require("zen.highlights").highlight(highlights, M.config.terminalColors and colors.theme.term or {})
+		return
 	end
+
+	if M.config.compile and M.config.variant == "auto" then
+		vim.notify("Zen: compile not supported with variant='auto', loading without compile", vim.log.levels.WARN)
+	end
+
+	local colors = require("zen.colors").setup({ colors = M.config.colors, variant = M.config.variant })
+	local highlights = require("zen.highlights").setup(colors, M.config)
+	require("zen.highlights").highlight(highlights, M.config.terminalColors and colors.theme.term or {})
 end
 
 --- Compile the colorscheme for faster loading
+---@return boolean compiled
 function M.compile()
+	if M.config.variant == "auto" then
+		vim.notify("Zen: compile not supported with variant='auto'", vim.log.levels.WARN)
+		return false
+	end
 	local colors = require("zen.colors").setup({ colors = M.config.colors, variant = M.config.variant })
 	local highlights = require("zen.highlights").setup(colors, M.config)
 	require("zen.utils").compile(highlights, M.config.terminalColors and colors.theme.term or {})
+	return true
 end
 
 vim.api.nvim_create_user_command("ZenCompile", function()
@@ -67,8 +87,9 @@ vim.api.nvim_create_user_command("ZenCompile", function()
 			package.loaded[mod] = nil
 		end
 	end
-	M.compile()
-	vim.notify("Zen: compiled successfully!", vim.log.levels.INFO)
+	if M.compile() then
+		vim.notify("Zen: compiled successfully!", vim.log.levels.INFO)
+	end
 	M.load()
 	vim.api.nvim_exec_autocmds("ColorScheme", { modeline = false })
 end, {})

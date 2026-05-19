@@ -1,6 +1,7 @@
 local M = {}
 
 ---@class ZenConfig
+---@field variant "dark"|"light"|"auto"
 M.config = {
 	variant = "auto", -- "dark", "light", or "auto" (follows vim.o.background)
 	undercurl = true,
@@ -49,18 +50,18 @@ function M.load()
 		})
 	end
 
-	if M.config.compile and M.config.variant ~= "auto" then
-		local utils = require("zen.utils")
-		if utils.load_compiled() then
+	if M.config.compile then
+		if M.config.variant == "auto" then
+			vim.notify("Zen: compile not supported with variant='auto', loading without compile", vim.log.levels.WARN)
+		else
+			local utils = require("zen.utils")
+			if utils.load_compiled() then
+				return
+			end
+			M.compile()
+			utils.load_compiled()
 			return
 		end
-		M.compile()
-		utils.load_compiled()
-		return
-	end
-
-	if M.config.compile and M.config.variant == "auto" then
-		vim.notify("Zen: compile not supported with variant='auto', loading without compile", vim.log.levels.WARN)
 	end
 
 	local colors = require("zen.colors").setup({ colors = M.config.colors, variant = M.config.variant })

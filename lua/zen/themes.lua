@@ -83,6 +83,10 @@
 ---@field replace string
 ---@field command string
 ---@field other string
+---@field bg string
+---@field bg_alt string
+---@field fg string
+---@field fg_dim string
 
 ---@class ThemeColors
 ---@field syn SyntaxElements
@@ -206,6 +210,10 @@ function M.theme(palette)
 			replace = palette.rose, -- pink for replace
 			command = palette.sand, -- tan for command
 			other = palette.slate, -- gray for other modes
+			bg = palette.bg1,
+			bg_alt = palette.bg3,
+			fg = palette.stone,
+			fg_dim = palette.slate,
 		},
 	}
 end

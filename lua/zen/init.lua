@@ -1,7 +1,5 @@
 local M = {}
 
----@class ZenConfig
----@field variant "dark"|"light"|"auto"
 M.config = {
 	variant = "auto", -- "dark", "light", or "auto" (follows vim.o.background)
 	undercurl = true,

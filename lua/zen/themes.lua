@@ -1,102 +1,3 @@
----@class SyntaxElements
----@field string string
----@field variable string
----@field number string
----@field constant string
----@field identifier string
----@field parameter string
----@field fun string
----@field statement string
----@field keyword string
----@field operator string
----@field preproc string
----@field type string
----@field regex string
----@field deprecated string
----@field comment string
----@field punct string
----@field special1 string
----@field special2 string
----@field tag string
----@field tag_attribute string
----@field tag_delimiter string
-
----@class DiagnosticsElements
----@field error string
----@field ok string
----@field warning string
----@field info string
----@field hint string
-
----@class DiffElements
----@field add string
----@field delete string
----@field change string
----@field text string
-
----@class VCSElements
----@field added string
----@field removed string
----@field changed string
-
----@class FloatElements
----@field fg string
----@field bg string
----@field fg_border string
----@field bg_border string
-
----@class MenuElements
----@field bg string
----@field fg string
----@field fg_sel string
----@field bg_sel string
----@field bg_sbar string
----@field bg_thumb string
-
----@class UiElements
----@field none string
----@field fg string
----@field fg_dim string
----@field fg_reverse string
----@field bg_dim string
----@field bg string
----@field bg_p1 string
----@field bg_p2 string
----@field bg_gutter string
----@field special string
----@field indent_line string
----@field nontext string
----@field whitespace string
----@field bg_search string
----@field bg_visual string
----@field cursor_line_nr_fg string
----@field cursor_line_nr_active_fg string
----@field cursor_bg string
----@field cursor_fg string
----@field pmenu MenuElements
----@field float FloatElements
-
----@class StatuslineElements
----@field normal string
----@field insert string
----@field visual string
----@field replace string
----@field command string
----@field other string
----@field bg string
----@field bg_alt string
----@field fg string
----@field fg_dim string
-
----@class ThemeColors
----@field syn SyntaxElements
----@field diag DiagnosticsElements
----@field vcs VCSElements
----@field diff DiffElements
----@field ui UiElements
----@field term string[]
----@field statusline StatuslineElements
-
 local M = {}
 
 ---@param palette PaletteColors
@@ -214,6 +115,14 @@ function M.theme(palette)
 			bg_alt = palette.bg3,
 			fg = palette.stone,
 			fg_dim = palette.slate,
+		},
+		tabline = {
+			bg = palette.bg1, -- tabline filler / inactive tab bg
+			bg_active = palette.bg0, -- active tab bg (matches editor)
+			fg_active = palette.slate, -- active/visible tab text
+			fg_inactive = palette.fg_dim, -- hidden tab text
+			fg_modified = palette.vcs_changed, -- modified buffer marker
+			fg_special = palette.ash, -- separators, indicators
 		},
 	}
 end

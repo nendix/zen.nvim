@@ -1,0 +1,144 @@
+---@class ZenConfig
+---@field variant "dark"|"light"|"auto"
+
+---@class PaletteColors
+---@field bg0 string
+---@field bg1 string
+---@field bg2 string
+---@field bg3 string
+---@field bg4 string
+---@field fg string
+---@field fg_dim string
+---@field fg_muted string
+---@field silver string
+---@field stone string
+---@field slate string
+---@field ash string
+---@field sage string
+---@field sand string
+---@field rose string
+---@field lavender string
+---@field sky string
+---@field mist string
+---@field diag_error string
+---@field diag_warn string
+---@field diag_info string
+---@field diag_hint string
+---@field diag_ok string
+---@field diff_add string
+---@field diff_delete string
+---@field diff_change string
+---@field diff_text string
+---@field vcs_added string
+---@field vcs_removed string
+---@field vcs_changed string
+
+---@class SyntaxElements
+---@field string string
+---@field variable string
+---@field number string
+---@field constant string
+---@field identifier string
+---@field parameter string
+---@field fun string
+---@field statement string
+---@field keyword string
+---@field operator string
+---@field preproc string
+---@field type string
+---@field regex string
+---@field deprecated string
+---@field comment string
+---@field punct string
+---@field special1 string
+---@field special2 string
+---@field tag string
+---@field tag_attribute string
+---@field tag_delimiter string
+
+---@class DiagnosticsElements
+---@field error string
+---@field ok string
+---@field warning string
+---@field info string
+---@field hint string
+
+---@class DiffElements
+---@field add string
+---@field delete string
+---@field change string
+---@field text string
+
+---@class VCSElements
+---@field added string
+---@field removed string
+---@field changed string
+
+---@class FloatElements
+---@field fg string
+---@field bg string
+---@field fg_border string
+---@field bg_border string
+
+---@class MenuElements
+---@field bg string
+---@field fg string
+---@field fg_sel string
+---@field bg_sel string
+---@field bg_sbar string
+---@field bg_thumb string
+
+---@class UiElements
+---@field none string
+---@field fg string
+---@field fg_dim string
+---@field fg_reverse string
+---@field bg_dim string
+---@field bg string
+---@field bg_p1 string
+---@field bg_p2 string
+---@field bg_gutter string
+---@field special string
+---@field indent_line string
+---@field nontext string
+---@field whitespace string
+---@field bg_search string
+---@field bg_visual string
+---@field cursor_line_nr_fg string
+---@field cursor_line_nr_active_fg string
+---@field cursor_bg string
+---@field cursor_fg string
+---@field pmenu MenuElements
+---@field float FloatElements
+
+---@class StatuslineElements
+---@field normal string
+---@field insert string
+---@field visual string
+---@field replace string
+---@field command string
+---@field other string
+---@field bg string
+---@field bg_alt string
+---@field fg string
+---@field fg_dim string
+
+---@class TablineElements
+---@field bg string
+---@field bg_active string
+---@field fg_active string
+---@field fg_inactive string
+---@field fg_modified string
+---@field fg_special string
+
+---@class ThemeColors
+---@field syn SyntaxElements
+---@field diag DiagnosticsElements
+---@field vcs VCSElements
+---@field diff DiffElements
+---@field ui UiElements
+---@field term string[]
+---@field statusline StatuslineElements
+---@field tabline TablineElements
+
+return {}

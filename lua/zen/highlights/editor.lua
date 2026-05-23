@@ -4,6 +4,7 @@ local M = {}
 ---@param config? table
 function M.setup(colors, config)
 	local theme = colors.theme
+	local function tbg(c) return config.transparent and theme.ui.none or c end
 	config = config or require("zen").config
 
 	return {
@@ -61,29 +62,29 @@ function M.setup(colors, config)
 		-- NonText: '@' at the end of the window, 'showbreak' characters, etc.
 		NonText = { fg = theme.ui.nontext },
 		-- Normal: Normal text
-		Normal = { fg = theme.ui.fg, bg = config.transparent and theme.ui.none or theme.ui.bg },
+		Normal = { fg = theme.ui.fg, bg = tbg(theme.ui.bg) },
 		-- NormalFloat: Normal text in floating windows
-		NormalFloat = { fg = theme.ui.float.fg, bg = config.transparent and theme.ui.none or theme.ui.float.bg },
+		NormalFloat = { fg = theme.ui.float.fg, bg = tbg(theme.ui.float.bg) },
 		-- FloatBorder: Border of floating windows
 		FloatBorder = {
 			fg = theme.ui.float.fg_border,
-			bg = config.transparent and theme.ui.none or theme.ui.float.bg_border,
+			bg = tbg(theme.ui.float.bg_border),
 		},
 		-- FloatTitle: Title of floating windows
 		FloatTitle = {
 			fg = theme.ui.special,
-			bg = config.transparent and theme.ui.none or theme.ui.float.bg_border,
+			bg = tbg(theme.ui.float.bg_border),
 		},
 		-- FloatFooter: Footer of floating windows
-		FloatFooter = { fg = theme.ui.nontext, bg = config.transparent and theme.ui.none or theme.ui.float.bg_border },
+		FloatFooter = { fg = theme.ui.nontext, bg = tbg(theme.ui.float.bg_border) },
 		-- NormalNC: Normal text in non-current windows
 		NormalNC = config.dimInactive and { fg = theme.ui.fg_dim, bg = theme.ui.bg_dim } or { link = "Normal" },
 		-- Pmenu: Popup menu: Normal item
-		Pmenu = { fg = theme.ui.pmenu.fg, bg = config.transparent and theme.ui.none or theme.ui.pmenu.bg },
+		Pmenu = { fg = theme.ui.pmenu.fg, bg = tbg(theme.ui.pmenu.bg) },
 		-- PmenuSel: Popup menu: Selected item
 		PmenuSel = { fg = theme.ui.pmenu.fg_sel, bg = theme.ui.pmenu.bg_sel },
 		-- PmenuKind: Popup menu: Normal item "kind"
-		PmenuKind = { fg = theme.ui.fg_dim, bg = config.transparent and theme.ui.none or theme.ui.pmenu.bg },
+		PmenuKind = { fg = theme.ui.fg_dim, bg = tbg(theme.ui.pmenu.bg) },
 		-- PmenuKindSel: Popup menu: Selected item "kind"
 		PmenuKindSel = { fg = theme.ui.fg_dim, bg = theme.ui.pmenu.bg_sel },
 		-- PmenuExtra: Popup menu: Normal item "extra text"
@@ -91,13 +92,13 @@ function M.setup(colors, config)
 		-- PmenuExtraSel: Popup menu: Selected item "extra text"
 		PmenuExtraSel = { fg = theme.ui.special, bg = theme.ui.pmenu.bg_sel },
 		-- PmenuSbar: Popup menu: Scrollbar
-		PmenuSbar = { bg = config.transparent and theme.ui.none or theme.ui.pmenu.bg_sbar },
+		PmenuSbar = { bg = tbg(theme.ui.pmenu.bg_sbar) },
 		-- PmenuThumb: Popup menu: Thumb of the scrollbar
 		PmenuThumb = { bg = theme.ui.pmenu.bg_thumb },
 		-- Question: |hit-enter| prompt and yes/no questions
 		Question = { link = "MoreMsg" },
 		-- QuickFixLine: Current quickfix item in the quickfix window
-		QuickFixLine = { bg = config.transparent and theme.ui.none or theme.ui.bg_p1 },
+		QuickFixLine = { bg = tbg(theme.ui.bg_p1) },
 		-- Search: Last search pattern highlighting
 		Search = { fg = theme.ui.fg, bg = theme.ui.bg_search },
 		-- SpecialKey: Unprintable characters
@@ -108,15 +109,15 @@ function M.setup(colors, config)
 		SpellLocal = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.warning },
 		SpellRare = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.warning },
 		-- StatusLine: Status line of current window
-		StatusLine = { fg = theme.ui.fg_dim, bg = theme.ui.none },
+		StatusLine = { fg = theme.statusline.fg, bg = tbg(theme.statusline.bg) },
 		-- StatusLineNC: Status lines of not-current windows
-		StatusLineNC = { fg = theme.ui.nontext, bg = theme.ui.none },
+		StatusLineNC = { fg = theme.statusline.fg_dim, bg = tbg(theme.statusline.bg) },
 		-- TabLine: Tab pages line, not active tab page label
-		TabLine = { bg = theme.ui.none, fg = theme.ui.special },
+		TabLine = { fg = theme.tabline.fg_inactive, bg = tbg(theme.tabline.bg) },
 		-- TabLineFill: Tab pages line, where there are no labels
-		TabLineFill = { bg = theme.ui.none },
+		TabLineFill = { bg = tbg(theme.tabline.bg) },
 		-- TabLineSel: Tab pages line, active tab page label
-		TabLineSel = { fg = theme.ui.fg_dim, bg = not config.transparent and theme.ui.bg_p1 or theme.ui.none },
+		TabLineSel = { fg = theme.tabline.fg_active, bg = tbg(theme.tabline.bg_active), bold = true },
 		-- Title: Titles for output from ":set all", ":autocmd" etc.
 		Title = { fg = theme.syn.fun },
 		-- Visual: Visual mode selection

@@ -65,6 +65,7 @@ function M.load()
 	local colors = require("zen.colors").setup({ colors = M.config.colors, variant = M.config.variant })
 	local highlights = require("zen.highlights").setup(colors, M.config)
 	require("zen.highlights").highlight(highlights, M.config.terminalColors and colors.theme.term or {})
+	vim.api.nvim_exec_autocmds("ColorScheme", { modeline = false })
 end
 
 --- Compile the colorscheme for faster loading

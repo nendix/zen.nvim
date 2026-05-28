@@ -100,6 +100,7 @@
 ---@field bg_gutter string
 ---@field special string
 ---@field indent_line string
+---@field scope string
 ---@field nontext string
 ---@field whitespace string
 ---@field bg_search string

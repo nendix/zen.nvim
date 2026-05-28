@@ -86,7 +86,7 @@ function M.setup(colors, config)
 		MiniIconsYellow = { fg = theme.syn.type },
 
 		-- mini.indentscope
-		MiniIndentscopeSymbol = { fg = theme.syn.special1 },
+		MiniIndentscopeSymbol = { fg = theme.ui.scope },
 		MiniIndentscopePrefix = { nocombine = true },
 
 		-- mini.jump

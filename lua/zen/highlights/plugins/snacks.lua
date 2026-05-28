@@ -15,8 +15,8 @@ function M.setup(colors, config)
 		SnacksPickerPrompt = { fg = theme.ui.fg },
 		SnacksPickerDim = { fg = theme.ui.fg_dim },
 		SnacksIndent = { fg = theme.ui.indent_line, nocombine = true },
-		SnacksIndentChunk = { fg = theme.ui.special, nocombine = true },
-		SnacksIndentScope = { fg = theme.ui.special, nocombine = true },
+		SnacksIndentChunk = { fg = theme.ui.indent_line, nocombine = true },
+		SnacksIndentScope = { fg = theme.ui.scope, nocombine = true },
 		SnacksPickerListCursorLine = { fg = theme.ui.fg, bg = theme.ui.bg_p2 },
 	}
 end

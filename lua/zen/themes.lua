@@ -17,6 +17,7 @@ function M.theme(palette)
 
 			special = palette.ash,
 			indent_line = palette.bg2,
+      scope = palette.bg4,
 			nontext = palette.fg_muted,
 			whitespace = palette.bg3,
 
